@@ -1,0 +1,14 @@
+version: '3'
+services:
+  fastapi:
+    build: 
+      context: .
+      dockerfile: fastapi/Dockerfile
+    env_file:
+      - .env
+  nginx:
+    build: 
+      context: .
+      dockerfile: nginx/Dockerfile
+    ports:
+      - "8080:8080"
